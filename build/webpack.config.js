@@ -1,6 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const projectRoot = path.resolve(__dirname, '../')
+var path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
     entry: {
@@ -10,7 +10,32 @@ module.exports = {
     },
     output: {
         path: path.resolve(projectRoot, './dist'),
-        filename: "app.bundle.js"
+        filename: '[name].bundle.js'
     },
-    plugins: [new HtmlWebpackPlugin()]
+    resolve: {
+        extensions: ['', '.js', '.vue'],
+        alias: {
+            'vue': 'vue/dist/vue.js'
+        }
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.html$/,
+                loader: 'html-loader'    // 可以用来加载模板
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: path.resolve(projectRoot, './dist/index.html'),
+            template: path.resolve(projectRoot, './index.html'),
+            inject: false,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+            }
+        }),
+    ]
 };

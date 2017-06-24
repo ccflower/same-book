@@ -4,7 +4,7 @@
   "description": "A simple book list webapp.",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev.js"
+    "dev": "webpack-dev-server --hot --inline"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/ccflower/same-book#readme",
   "dependencies": {
-      "vue": "^2.1.3"
+    "vue": "^2.3.4"
   },
   "devDependencies": {
-      "html-webpack-plugin": "^2.24.1",
-      "webpack": "^1.13.3"
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^2.5.0"
   }
 }
