@@ -4,7 +4,8 @@
   "description": "A simple book list webapp.",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev.js"
+    "dev": "node build/dev.js",
+    "build": "node build/build.js"
   },
   "repository": {
     "type": "git",
