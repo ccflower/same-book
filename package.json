@@ -4,7 +4,7 @@
   "description": "A simple book list webapp.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline"
+    "dev": "node build/dev.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
   "devDependencies": {
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.28.0",
+    "opn": "^5.1.0",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^1.16.5"
   }
 }
